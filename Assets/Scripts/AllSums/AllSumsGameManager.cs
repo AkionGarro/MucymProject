@@ -18,6 +18,7 @@ public class AllSumsGameManager : MonoBehaviour
         DisableReplacementNumbers();
         _numbers = new int[5, 2];
         _uiManager = GameObject.Find("Canvas").GetComponent<UI_ManagerAllSums>();
+        Debug.Log("Me cago en la puta");
     }
 
     // Update is called once per frame
@@ -57,7 +58,7 @@ public class AllSumsGameManager : MonoBehaviour
         for (int i = 0; i < nums.Length; i++)
         {
             NumbersAllSums numScript = nums[i].GetComponent<NumbersAllSums>();
-            //Debug.Log("[" + numScript.row + "," + numScript.col + "] = " + numScript.value);
+            Debug.Log("[" + numScript.row + "," + numScript.col + "] = " + numScript.value);
 
             if (numScript.row != 5 && numScript.col != 2)
             {
@@ -73,11 +74,13 @@ public class AllSumsGameManager : MonoBehaviour
         int condition3_value = _numbers[2, 0] + _numbers[2, 1] + pivot.GetComponent<NumbersAllSums>().value;
         int condition4_value = _numbers[3, 0] + _numbers[3, 1] + pivot.GetComponent<NumbersAllSums>().value;
         int condition5_value = _numbers[4, 0] + _numbers[4, 1] + pivot.GetComponent<NumbersAllSums>().value;
-        Debug.Log(condition1_value);
-        Debug.Log(condition2_value);
-        Debug.Log(condition3_value);
-        Debug.Log(condition4_value);
-        Debug.Log(condition5_value);
+
+
+        Debug.Log("value1: " + (int)condition1_value);
+        Debug.Log("value2: " + (int)condition2_value);
+        Debug.Log("value3: " + (int)condition3_value);
+        Debug.Log("value4: " + (int)condition4_value);
+        Debug.Log("value5: " + (int)condition5_value);
 
         int targetValue = condition1_value;
        if (condition1_value != targetValue ||
@@ -94,7 +97,7 @@ public class AllSumsGameManager : MonoBehaviour
         }
 
         
-        return false;
+        return flag;
 
 
 
