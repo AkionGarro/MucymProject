@@ -46,6 +46,11 @@ public class ScenesControllerScript : MonoBehaviour
         SceneManager.LoadScene("MagicSquare");
     }
 
+    public void LoadAllSums()
+    {
+        SceneManager.LoadScene("AllSums");
+    }
+
     public void CloseGame()
     {
         Application.Quit();
