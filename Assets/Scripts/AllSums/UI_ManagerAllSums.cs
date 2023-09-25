@@ -19,7 +19,7 @@ public class UI_ManagerAllSums : MonoBehaviour
         timerLabel.text = "Tiempo\n0:00";
         _tipAnimator = tipPanel.GetComponent<Animator>();
         tipPanel.SetActive(false);
-        StartTimer();
+        
     }
 
     void Update()

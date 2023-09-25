@@ -28,51 +28,27 @@ public class AllSumsGameManager : MonoBehaviour
 
     public void DisableReplacementNumbers()
     {
+        pivot.SetActive(false);
         for (int i = 0; i < replacementNumbers.Length; i++)
         {
             replacementNumbers[i].SetActive(false);
         }
+        
     }
 
     public void EnableReplacementNumbers()
     {
+        pivot.SetActive(true);
         for (int i = 0; i < replacementNumbers.Length; i++)
         {
             replacementNumbers[i].SetActive(true);
         }
+       
     }
 
 
 
-    /*
-    private bool CheckIfWin()
-    {
-        bool flag = false;
-        int pivot = 6;
-
-         ArrayList<Pair> list = new ArrayList<Pair>();
-         Pair p1 = new Pair(1, 11, pivot);
-         Pair p2 = new Pair(2, 10, pivot);
-         Pair p3 = new Pair(3, 9, pivot);
-         Pair p4 = new Pair(4, 8, pivot);
-         Pair p5 = new Pair(5, 7, pivot);
-
-         list.add(p1);
-         list.add(p2);
-         list.add(p3);
-         list.add(p4);
-         list.add(p5);
-
-         int firstSum = list.get(0).checkSum();
-         for (int i = 0; i < list.size(); i++)
-         {
-             if (firstSum != list.get(i).checkSum())
-             {
-                 flag = false;
-             }
-         }
-        return flag;
-    }*/
+    
     private bool CheckIfWin()
     {
         bool flag = false;
@@ -83,7 +59,7 @@ public class AllSumsGameManager : MonoBehaviour
             NumbersAllSums numScript = nums[i].GetComponent<NumbersAllSums>();
             //Debug.Log("[" + numScript.row + "," + numScript.col + "] = " + numScript.value);
 
-            if (numScript.row != 6 && numScript.col != 3)
+            if (numScript.row != 5 && numScript.col != 2)
             {
                 if (numScript.value == 0) //If there are still clean pieces on the evaluation board: row -> 0,1,2 or col -> 0,1,2
                     return false;
@@ -97,6 +73,12 @@ public class AllSumsGameManager : MonoBehaviour
         int condition3_value = _numbers[2, 0] + _numbers[2, 1] + pivot.GetComponent<NumbersAllSums>().value;
         int condition4_value = _numbers[3, 0] + _numbers[3, 1] + pivot.GetComponent<NumbersAllSums>().value;
         int condition5_value = _numbers[4, 0] + _numbers[4, 1] + pivot.GetComponent<NumbersAllSums>().value;
+        Debug.Log(condition1_value);
+        Debug.Log(condition2_value);
+        Debug.Log(condition3_value);
+        Debug.Log(condition4_value);
+        Debug.Log(condition5_value);
+
         int targetValue = condition1_value;
        if (condition1_value != targetValue ||
            condition2_value != targetValue ||

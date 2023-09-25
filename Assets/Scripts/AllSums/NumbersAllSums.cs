@@ -5,8 +5,8 @@ using UnityEngine;
 public class NumbersAllSums : MonoBehaviour
 {
     public int value; //The number on the piece
-    public int row = 4; //0 to 3 are the positions on the game board          
-    public int col = 4;
+    public int row = 5; //0 to 4 are the positions on the game board          
+    public int col = 5;
 
     private int _originalRow;
     private int _originalColumn;
